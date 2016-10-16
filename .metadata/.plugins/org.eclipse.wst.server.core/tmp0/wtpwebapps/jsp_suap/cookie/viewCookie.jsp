@@ -1,0 +1,31 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<%
+	Cookie [] cookie = request.getCookies();
+
+	if(cookie[0].getName().equals("")){
+		System.out.print(cookie[0].getName());
+	}
+%>
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<% for(Cookie coo : cookie){
+	out.println(coo.getName() +" : "+coo.getValue()+"<br>");	
+	
+	
+}	
+
+out.println(cookie[0].getName());
+	%>
+
+
+
+</body>
+</html>

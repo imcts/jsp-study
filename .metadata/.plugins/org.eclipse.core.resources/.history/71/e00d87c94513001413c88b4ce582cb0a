@@ -1,0 +1,57 @@
+<%@ include file="./../common/top.jsp" %>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%String gotopage= me_folder+"meLoginForm.jsp";
+if(mem==null){
+	
+	response.sendRedirect(gotopage);
+}
+ %>
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+		<tr>
+			<td  colspan="5">
+			<h3 align="center">게시물 작성</h3>
+			<form method="post" name="writeForm" action="boWriteProc.jsp">
+			<table align="center" width="80%">
+				<tr>
+					<td>글 제목</td>
+					<td><input type="text" value="제목" name="subject"></td>
+				</tr>
+				<tr>
+					<td>작성자</td>
+					<td><input type="text" value="홍길동" name="writer"></td>
+				</tr>
+				<tr>
+					<td>비밀 번호</td>
+					<td><input type="text" value="1234" name="password"></td>
+				</tr>
+				<tr>
+					<td>글 내용</td>
+					<td><input type="text" value="어떤 내용" size="70%" name="content"></td>
+				</tr>
+				<tr>
+					<td>작성 일자</td>
+					<td><input type="text" value="2014-05-19" name="regdate"></td>
+				</tr>
+				<tr>
+					<td><input type="submit" value="작성"></td>
+					<td><input type="button" value="취소" onclick="location.href='boList.jsp';"></td>
+				</tr>
+				
+			
+			</table>
+			</form>
+			</td>	
+		</tr>
+	
+	<%@ include file="./../common/bottom.jsp" %>
+</body>
+</html>

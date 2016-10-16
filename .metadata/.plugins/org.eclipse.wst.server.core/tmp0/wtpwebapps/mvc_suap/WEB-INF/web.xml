@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee                       
+http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+
+	<servlet>
+		<servlet-name>F_Controller</servlet-name> <!--컨트롤러의 이름을 지정해준다.  -->
+		<servlet-class>service.F_Controller</servlet-class> <!--컨트롤러 클래스 파일의 위치를 지정해준다.-->
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>F_Controller</servlet-name><!--맵핑된 컨트롤러 클래스의 이름을 지정한다.  -->
+		<url-pattern>*.bo</url-pattern><!--.bo로 들어왔을때에 이동할 컨트롤러 클래스 이름을 지정한다.   -->
+	</servlet-mapping>
+
+	<resource-ref>
+		<description>Connection</description><!--커넥션풀의 네이밍 지정.  -->
+		<res-ref-name>jdbc/OracleDB</res-ref-name><!--커넥션풀의 네이밍 지정  -->
+		<res-type>javax.sql.DataSource</res-type><!--데이터소스 타입 지정  -->
+		<res-auth>Container</res-auth><!--컨테이너  -->
+	</resource-ref>
+
+
+</web-app>
+
+
